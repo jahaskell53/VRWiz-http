@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import log4js from "log4js";
 import fs from "fs";
-import https from "https";
+import http from "http";
 import { Server } from "socket.io";
 import express from "express";
 
@@ -25,10 +25,10 @@ const exp = express();
 
 // Create an HTTPS service
 const httpsOptions = {
-  key: fs.readFileSync(process.env.KEY_PATH!),
-  cert: fs.readFileSync(process.env.CERT_PATH!),
+  // key: fs.readFileSync(process.env.KEY_PATH!),
+  // cert: fs.readFileSync(process.env.CERT_PATH!),
 };
-const app = https.createServer(httpsOptions, exp);
+const app = http.createServer(httpsOptions, exp);
 logger.info("HTTPS server created");
 
 // Create a socket.io service
