@@ -1,6 +1,5 @@
 import dotenv from "dotenv";
 import log4js from "log4js";
-import fs from "fs";
 import http from "http";
 import { Server } from "socket.io";
 import express from "express";
